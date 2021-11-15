@@ -6,3 +6,138 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.bowyer-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.bowyer-nav__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+}
+.bowyer-nav__logo a:link, .bowyer-nav__logo a:visited {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  position: relative;
+}
+.bowyer-nav__logo a:link img, .bowyer-nav__logo a:visited img {
+  width: 100%;
+}
+.bowyer-nav__logo a:link .logo-o, .bowyer-nav__logo a:visited .logo-o {
+  position: absolute;
+  width: 1.9rem;
+  top: 33%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+}
+.bowyer-nav__logo:hover a .logo-o {
+  -webkit-animation: rotateO 1s ease-in-out;
+          animation: rotateO 1s ease-in-out;
+}
+.bowyer-nav__burger {
+  width: 3.7rem;
+  height: 3.7rem;
+  position: relative;
+  cursor: pointer;
+  z-index: 999;
+}
+.bowyer-nav__burger img {
+  width: 100%;
+}
+.bowyer-nav__burger .target-norm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: opacity 500ms ease-in-out;
+}
+.bowyer-nav__burger .target-norm.norm-open {
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.bowyer-nav__burger .target-clicked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.bowyer-nav__burger .target-clicked.clicked-open {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: opacity 500ms ease-in-out;
+}
+.bowyer-nav__overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100vh;
+  background-color: gray;
+  transition: all 400ms ease-in-out;
+}
+.bowyer-nav__overlay.show {
+  right: 0;
+  transition: all 400ms ease-in-out;
+}
+.bowyer-nav__overlay ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.bowyer-nav__overlay ul li {
+  list-style: none;
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@-webkit-keyframes rotateO {
+  0% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: all 200ms ease-in-out;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(25deg);
+    transition: all 200ms ease-in-out;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: all 200ms ease-in-out;
+  }
+}
+
+@keyframes rotateO {
+  0% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: all 200ms ease-in-out;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(25deg);
+    transition: all 200ms ease-in-out;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: all 200ms ease-in-out;
+  }
+}

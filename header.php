@@ -8,11 +8,5 @@
     <body>
         <div class="app">
             <header>
-                <nav class="header-nav">
-                    <div class="header-nav__logo">
-                        <a href="/">
-                            BOWYER
-                        </a>
-                    </div>
-                </nav>  
+                <?php include 'blocks/nav.php'; ?>
             </header>

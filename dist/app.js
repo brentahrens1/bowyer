@@ -5,9 +5,32 @@
 /*!****************************!*\
   !*** ./src/scripts/app.js ***!
   \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger */ "./src/scripts/burger.js");
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_burger__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/***/ }),
+
+/***/ "./src/scripts/burger.js":
+/*!*******************************!*\
+  !*** ./src/scripts/burger.js ***!
+  \*******************************/
 /***/ (() => {
 
-console.log('hello world');
+var targetNorm = document.querySelector('.target-norm');
+var targetClicked = document.querySelector('.target-clicked');
+var clickedOpen = document.querySelector('.clicked-open');
+var burger = document.querySelector('.bowyer-nav__burger');
+var overlay = document.querySelector('.bowyer-nav__overlay');
+burger.addEventListener('click', function () {
+  targetClicked.classList.toggle("clicked-open");
+  targetNorm.classList.toggle("norm-open");
+  overlay.classList.toggle("show");
+});
 
 /***/ }),
 
@@ -83,6 +106,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	
