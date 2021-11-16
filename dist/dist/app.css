@@ -101,6 +101,11 @@ html, body {
   transition: all 400ms ease-in-out;
   z-index: 900;
 }
+@media (max-width: 530px) {
+  .bowyer-nav__overlay {
+    width: 100%;
+  }
+}
 .bowyer-nav__overlay.show {
   right: 0;
   transition: all 400ms ease-in-out;
@@ -159,6 +164,18 @@ html, body {
   align-items: center;
   position: relative;
 }
+@media (max-width: 750px) {
+  .text-module {
+    padding: 2rem;
+    pading-top: 7rem;
+  }
+}
+@media (max-width: 530px) {
+  .text-module {
+    padding-top: 4rem;
+    min-height: 400px;
+  }
+}
 .text-module h1 {
   font-size: 3.5rem;
   margin: 0;
@@ -167,12 +184,31 @@ html, body {
   max-width: 600px;
   z-index: 1;
 }
+@media (max-width: 750px) {
+  .text-module h1 {
+    font-size: 2.8rem;
+    line-height: 44px;
+  }
+}
+@media (max-width: 530px) {
+  .text-module h1 {
+    font-size: 2.2rem;
+    line-height: 44px;
+    margin-bottom: 1rem;
+  }
+}
 .text-module p {
   font-size: 1.2rem;
   margin: 0;
   transform: translateX(100px);
   max-width: 450px;
   z-index: 1;
+}
+@media (max-width: 750px) {
+  .text-module p {
+    transform: translateX(0px);
+    align-self: flex-start;
+  }
 }
 .text-module__image {
   position: absolute;

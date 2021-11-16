@@ -23,7 +23,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var targetNorm = document.querySelector('.target-norm');
 var targetClicked = document.querySelector('.target-clicked');
-var clickedOpen = document.querySelector('.clicked-open');
 var burger = document.querySelector('.bowyer-nav__burger');
 var overlay = document.querySelector('.bowyer-nav__overlay');
 burger.addEventListener('click', function () {

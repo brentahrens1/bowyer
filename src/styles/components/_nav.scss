@@ -101,6 +101,9 @@
         background-color: gray;
         transition: all 400ms ease-in-out;
         z-index: 900;
+        @include atSmall {
+            width: 100%;
+        }
 
         &.show {
             right: 0;

@@ -5,6 +5,12 @@
         @content;
     }
 }
+
+@mixin atSmallMedium {
+    @media (max-width: 750px) {
+        @content;
+    }
+}
   
 @mixin atMedium {
     @media (max-width: 960px) {
