@@ -1,0 +1,41 @@
+.text-module {
+    width: 100%;
+    min-height: 500px;
+    padding: 7rem;
+    padding-top: 7rem;
+    background-color: $tan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h1 {
+        font-size: $headline;
+        margin: 0;
+        margin-bottom: 2rem;
+        line-height: 53px;
+        max-width: 600px;
+        z-index: 1;
+    }
+
+    p {
+        font-size: $bodyText;
+        margin: 0;
+        transform: translateX(100px);
+        max-width: 450px;
+        z-index: 1;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+
+        .background-image {
+            width: 100%;
+        }
+    }
+}

@@ -12,6 +12,11 @@ html, body {
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 900;
 }
 .bowyer-nav__logo {
   display: flex;
@@ -94,6 +99,7 @@ html, body {
   height: 100vh;
   background-color: gray;
   transition: all 400ms ease-in-out;
+  z-index: 900;
 }
 .bowyer-nav__overlay.show {
   right: 0;
@@ -140,4 +146,41 @@ html, body {
     transform: translate(-50%, -50%) rotate(0deg);
     transition: all 200ms ease-in-out;
   }
+}
+.text-module {
+  width: 100%;
+  min-height: 500px;
+  padding: 7rem;
+  padding-top: 7rem;
+  background-color: #F7F2EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.text-module h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  margin-bottom: 2rem;
+  line-height: 53px;
+  max-width: 600px;
+  z-index: 1;
+}
+.text-module p {
+  font-size: 1.2rem;
+  margin: 0;
+  transform: translateX(100px);
+  max-width: 450px;
+  z-index: 1;
+}
+.text-module__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.text-module__image .background-image {
+  width: 100%;
 }
