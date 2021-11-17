@@ -28,6 +28,7 @@
         @include atSmallMedium {
             font-size: $headlineTablet;
             line-height: 44px;
+            align-self: flex-start;
         }
         @include atSmall {
             font-size: $headlineMobile;

@@ -6,8 +6,10 @@
             $backgroundImage = get_sub_field('background_image'); 
             $backgroundHex = get_sub_field('background_hex_color');
             $headlineHex = get_sub_field('headline_text_color');
-            $bodyTextHex = get_sub_field('body_text_color'); ?>
-            <div class="text-module" style="background-color: <?php echo $backgroundHex; ?>">
+            $bodyTextHex = get_sub_field('body_text_color');
+            $backgroundColorScroll = get_sub_field('background_color_scroll'); ?>
+            <div class="text-module section" style="background-color: 
+                <?php echo (class_exists('scroll-into-view')) ? $backgroundColorScroll : $backgroundHex ?>">
                 <?php if ($backgroundImage): ?>
                     <div class="text-module__image">
                         <img class="background-image" src="<?php echo $backgroundImage; ?>" alt="<?php echo $headline; ?>" /> 

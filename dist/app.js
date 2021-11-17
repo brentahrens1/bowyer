@@ -11,6 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger */ "./src/scripts/burger.js");
 /* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_burger__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _sectionObserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sectionObserver */ "./src/scripts/sectionObserver.js");
+/* harmony import */ var _sectionObserver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sectionObserver__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ }),
@@ -29,6 +32,33 @@ burger.addEventListener('click', function () {
   targetClicked.classList.toggle("clicked-open");
   targetNorm.classList.toggle("norm-open");
   overlay.classList.toggle("show");
+});
+
+/***/ }),
+
+/***/ "./src/scripts/sectionObserver.js":
+/*!****************************************!*\
+  !*** ./src/scripts/sectionObserver.js ***!
+  \****************************************/
+/***/ (() => {
+
+var sections = document.querySelectorAll('.section');
+var options = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-120px"
+};
+var observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(function (entry) {
+    if (!entry.isIntersecting) {
+      entry.target.classList.remove("scroll-into-view");
+    } else {
+      entry.target.classList.add("scroll-into-view");
+    }
+  });
+}, options);
+sections.forEach(function (section) {
+  observer.observe(section);
 });
 
 /***/ }),
