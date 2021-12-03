@@ -228,18 +228,23 @@ li {
   width: 100%;
 }
 
-.text-image-right {
+.text-image {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 500px;
+  transition: all 2s linear;
 }
 @media (max-width: 750px) {
-  .text-image-right {
+  .text-image {
     flex-direction: column;
   }
 }
-.text-image-right__content {
+.text-image.scroll-into-view {
+  background-color: lightblue !important;
+  transition: all 2s linear;
+}
+.text-image__content {
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -249,32 +254,32 @@ li {
   padding-right: 3rem;
 }
 @media (max-width: 750px) {
-  .text-image-right__content {
+  .text-image__content {
     width: 100%;
     padding: 3rem;
   }
 }
-.text-image-right__content .text-image-right-headline {
+.text-image__content .text-image-headline {
   margin: 0;
   font-size: 3.5rem;
   line-height: 53px;
   z-index: 1;
 }
 @media (max-width: 750px) {
-  .text-image-right__content .text-image-right-headline {
+  .text-image__content .text-image-headline {
     font-size: 2.8rem;
     line-height: 44px;
     align-self: flex-start;
   }
 }
 @media (max-width: 530px) {
-  .text-image-right__content .text-image-right-headline {
+  .text-image__content .text-image-headline {
     font-size: 2.2rem;
     line-height: 44px;
     margin-bottom: 1rem;
   }
 }
-.text-image-right__content .text-image-right-cta {
+.text-image__content .text-image-cta {
   width: 100%;
   border: 1px solid #000;
   padding: 1rem;
@@ -282,7 +287,7 @@ li {
   display: block;
   cursor: pointer;
 }
-.text-image-right__image {
+.text-image__right, .text-image__left {
   width: 60%;
   min-height: 500px;
   overflow: hidden;
@@ -291,11 +296,11 @@ li {
   background-size: cover;
 }
 @media (max-width: 750px) {
-  .text-image-right__image {
+  .text-image__right, .text-image__left {
     width: 100%;
   }
 }
-.text-image-right__image img {
+.text-image__right img, .text-image__left img {
   width: 100%;
 }
 
@@ -304,12 +309,17 @@ li {
   align-items: center;
   justify-content: space-between;
   min-height: 400px;
+  transition: all 2s linear;
 }
 @media (max-width: 750px) {
   .text-cta {
     flex-direction: column;
     justify-content: center;
   }
+}
+.text-cta.scroll-into-view {
+  background-color: pink !important;
+  transition: all 2s linear;
 }
 .text-cta__headline {
   width: 50%;
