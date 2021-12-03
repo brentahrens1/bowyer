@@ -1,0 +1,51 @@
+.text-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
+    @include atSmallMedium {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__headline {
+        width: 50%;
+        padding: 0 3rem;
+        h1 {
+            @include header;
+        }
+
+        @include atSmallMedium {
+            width: 100%;
+
+            h1 {
+                text-align: center;
+            }
+        }
+    }
+
+    &__content {
+        width: 50%;
+        padding: 0 3rem;
+
+        .text-cta-description {
+            font-size: $bodyText;
+            @include atSmallMedium {
+                text-align: center;
+            }
+        }
+
+        .text-cta-cta {
+            @include cta;
+            width: 20rem;
+            @include atSmallMedium {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @include atSmallMedium {
+           width: 100%;
+        }
+    }
+}

@@ -19,22 +19,9 @@
     }
 
     h1 {
-        font-size: $headline;
-        margin: 0;
+        @include header;
         margin-bottom: 2rem;
-        line-height: 53px;
-        max-width: 600px;
-        z-index: 1;
-        @include atSmallMedium {
-            font-size: $headlineTablet;
-            line-height: 44px;
-            align-self: flex-start;
-        }
-        @include atSmall {
-            font-size: $headlineMobile;
-            line-height: 44px;
-            margin-bottom: 1rem;
-        }
+        max-width: 600px;        
     }
 
     p {

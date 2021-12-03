@@ -20,18 +20,7 @@
             padding: 3rem;
         }
         .text-image-right-headline {
-            margin: 0;
-            font-size: $headline;
-            @include atSmallMedium {
-                font-size: $headlineTablet;
-                line-height: 44px;
-                align-self: flex-start;
-            }
-            @include atSmall {
-                font-size: $headlineMobile;
-                line-height: 44px;
-                margin-bottom: 1rem;
-            }
+            @include header;
         }
 
         .text-image-right-cta {

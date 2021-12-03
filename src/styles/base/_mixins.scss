@@ -41,3 +41,20 @@
     display: block;
     cursor: pointer;
 }
+
+@mixin header {
+    margin: 0;
+    font-size: $headline;
+    line-height: 53px;
+    z-index: 1;
+    @include atSmallMedium {
+        font-size: $headlineTablet;
+        line-height: 44px;
+        align-self: flex-start;
+    }
+    @include atSmall {
+        font-size: $headlineMobile;
+        line-height: 44px;
+        margin-bottom: 1rem;
+    }
+}
