@@ -4,10 +4,11 @@
     justify-content: space-between;
     padding: $padding-reg;
     position: fixed;
-    top: 1rem;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 900;
+    transition: top .7s ease;
 
     &__logo {
         display: flex;
