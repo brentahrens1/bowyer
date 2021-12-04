@@ -58,3 +58,15 @@
         margin-bottom: 1rem;
     }
 }
+
+@mixin header-medium {
+    margin: 0;
+    font-size: $headline2;
+    line-height: 40px;
+    z-index: 1;
+    @include atSmallMedium {
+        font-size: $headline2Tablet;
+        line-height: 35px;
+        align-self: flex-start;
+    }
+}

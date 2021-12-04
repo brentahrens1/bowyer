@@ -1,0 +1,51 @@
+.format-container {
+    .format {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        @include atSmallMedium {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        &__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+
+            h2 {
+                @include header-medium;
+                margin-bottom: 3rem;
+                z-index: 0;
+            }
+            
+            p {
+                margin: 0;
+                font-size: $bodyText;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                z-index: 2;
+                opacity: 0;
+                height: 100%;
+                width: 0;
+                cursor: pointer;
+                transition: opacity 300ms linear;
+            }
+
+            &:hover img {
+                opacity: 1;
+                width: 100%;
+                transition: opacity 300ms linear;
+            }
+        }
+    }
+}
