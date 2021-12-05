@@ -9,20 +9,21 @@
             $headlineHex = get_sub_field('headline_color');
             $descriptionColor = get_sub_field('description_color');
             $ctaHex = get_sub_field('cta_color'); ?>
-            <div class="text-cta section" style="background-color: 
-                <?php echo (class_exists('scroll-into-view')) ? $backgroundColorScroll : $backgroundHex ?>">
-                <div class="text-cta__headline">
-                    <?php if ($headline): ?>
-                        <h1 class="text-cta-headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
-                    <?php endif; ?>
-                </div>
-                <div class="text-cta__content">
-                    <?php if ($description): ?>
-                        <p class="text-cta-description" style="color: <?php echo $descriptionColor; ?>"><?php echo $description; ?></p>
-                    <?php endif; ?>
-                    <?php if ($cta): ?>
-                        <p class="text-cta-cta" style="color: <?php echo $ctaHex; ?>"><?php echo $cta; ?></p>
-                    <?php endif; ?>
+            <div class="text-cta section <?php echo $backgroundColorScroll;?> <?php echo $backgroundHex; ?>">
+                <div class="text-cta-inner">
+                    <div class="text-cta-inner__headline">
+                        <?php if ($headline): ?>
+                            <h1 class="text-cta-inner-headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
+                        <?php endif; ?>
+                    </div>
+                    <div class="text-cta-inner__content">
+                        <?php if ($description): ?>
+                            <p class="text-cta-inner-description" style="color: <?php echo $descriptionColor; ?>"><?php echo $description; ?></p>
+                        <?php endif; ?>
+                        <?php if ($cta): ?>
+                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaHex; ?>"><?php echo $cta; ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>

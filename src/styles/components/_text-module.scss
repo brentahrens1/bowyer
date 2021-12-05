@@ -1,50 +1,55 @@
 .text-module {
     width: 100%;
-    min-height: 500px;
-    padding: 7rem;
-    padding-top: 7rem;
-    background-color: $tan;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    @include atSmallMedium {
-        padding: 2rem;
-        pading-top: 7rem;
-    }
-    @include atSmall {
-        padding-top: 4rem;
-        min-height: 400px;
-    }
-
-    h1 {
-        @include header;
-        margin-bottom: 2rem;
-        max-width: 600px;        
-    }
-
-    p {
-        font-size: $bodyText;
-        margin: 0;
-        transform: translateX(100px);
-        max-width: 450px;
-        z-index: 1;
+    
+    .text-module-inner {
+        min-height: 500px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 7rem;
+        padding-top: 7rem;
+        background-color: $tan;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         @include atSmallMedium {
-            transform: translateX(0px);
-            align-self: flex-start;
+            padding: 2rem;
+            pading-top: 7rem;
         }
-    }
+        @include atSmall {
+            padding-top: 4rem;
+            min-height: 400px;
+        }
 
-    &__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 0;
-
-        .background-image {
+        h1 {
+            @include header;
+            margin-bottom: 2rem;
+            max-width: 600px;        
+        }
+    
+        p {
+            font-size: $bodyText;
+            margin: 0;
+            transform: translateX(100px);
+            max-width: 450px;
+            z-index: 1;
+            @include atSmallMedium {
+                transform: translateX(0px);
+                align-self: flex-start;
+            }
+        }
+    
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            z-index: 0;
+    
+            .background-image {
+                width: 100%;
+            }
         }
     }
 }

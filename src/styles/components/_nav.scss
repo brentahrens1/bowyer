@@ -46,6 +46,10 @@
         position: relative;
         cursor: pointer;
         z-index: 999;
+        @include atSmall {
+            width: 3.3rem;
+            height: 3.3rem;
+        }
 
         img {
             width: 100%;
@@ -87,6 +91,14 @@
                 height: auto;
                 transition: opacity 500ms ease-in-out;
             }
+        }
+        
+        &:hover .target-clicked {
+            visibility: visible;
+            width: 100%;
+            opacity: 1;
+            height: auto;
+            transition: opacity 200ms ease-in-out;
         }
     }
 

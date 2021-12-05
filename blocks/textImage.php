@@ -11,22 +11,24 @@
             $ctaHex = get_sub_field('cta_text_color'); ?>
             <div class="text-image section" style="background-color: 
                 <?php echo (class_exists('scroll-into-view')) ? $backgroundColorScroll : $backgroundHex ?>">
-                <?php if ($imageLeft): ?>
-                    <div class="text-image__left" style="background-image: url(<?php echo $imageLeft; ?>);">
-                    </div>
-                <?php endif; ?>
-                <div class="text-image__content">
-                    <?php if ($headline): ?>
-                        <h1 class="text-image-headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
+                <div class="text-image-inner">
+                    <?php if ($imageLeft): ?>
+                        <div class="text-image-inner__left" style="background-image: url(<?php echo $imageLeft; ?>);">
+                        </div>
                     <?php endif; ?>
-                    <?php if ($cta): ?>
-                        <p class="text-image-cta" style="color: <?php echo $ctaHex; ?>"><?php echo $cta; ?></p>
+                    <div class="text-image-inner__content">
+                        <?php if ($headline): ?>
+                            <h1 class="text-image-inner-headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
+                        <?php endif; ?>
+                        <?php if ($cta): ?>
+                            <p class="text-image-inner-cta" style="color: <?php echo $ctaHex; ?>"><?php echo $cta; ?></p>
+                        <?php endif; ?>
+                    </div>
+                    <?php if ($imageRight): ?>
+                        <div class="text-image-inner__right" style="background-image: url(<?php echo $imageRight; ?>);">
+                        </div>
                     <?php endif; ?>
                 </div>
-                <?php if ($imageRight): ?>
-                    <div class="text-image__right" style="background-image: url(<?php echo $imageRight; ?>);">
-                    </div>
-                <?php endif; ?>
             </div>
         <?php endif; ?>
     <?php endwhile; ?>

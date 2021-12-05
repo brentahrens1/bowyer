@@ -10,17 +10,19 @@
             $backgroundColorScroll = get_sub_field('background_color_scroll'); ?>
             <div class="text-module section" style="background-color: 
                 <?php echo (class_exists('scroll-into-view')) ? $backgroundColorScroll : $backgroundHex ?>">
-                <?php if ($backgroundImage): ?>
-                    <div class="text-module__image">
-                        <img class="background-image" src="<?php echo $backgroundImage; ?>" alt="<?php echo $headline; ?>" /> 
-                    </div>
-                <?php endif; ?>
-                <?php if ($headline): ?>
-                    <h1 class="text-module__headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
-                <?php endif; ?>
-                <?php if ($bodyText): ?>
-                    <p class="text-module__body-text" style="color: <?php echo $bodyTextHex; ?>"><?php echo $bodyText; ?></p>
-                <?php endif; ?>
+                <div class="text-module-inner">
+                    <?php if ($backgroundImage): ?>
+                        <div class="text-module-inner__image">
+                            <img class="background-image" src="<?php echo $backgroundImage; ?>" alt="<?php echo $headline; ?>" /> 
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($headline): ?>
+                        <h1 class="text-module-inner__headline" style="color: <?php echo $headlineHex; ?>"><?php echo $headline; ?></h1>
+                    <?php endif; ?>
+                    <?php if ($bodyText): ?>
+                        <p class="text-module-inner__body-text" style="color: <?php echo $bodyTextHex; ?>"><?php echo $bodyText; ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php endif; ?>
     <?php endwhile; ?>

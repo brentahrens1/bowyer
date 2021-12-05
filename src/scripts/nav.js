@@ -1,11 +1,5 @@
 const nav = document.querySelector('.bowyer-nav')
 
-window.onscroll = function() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        nav.classList.add('nav-scrolled')
-    }
-}
-
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
