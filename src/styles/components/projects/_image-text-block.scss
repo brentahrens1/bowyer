@@ -1,0 +1,39 @@
+.project {
+    &__image-text {
+        display: flex;
+        padding: 3rem 3rem;
+        @include atMedium {
+            flex-direction: column;
+        }
+
+        .image-text-content {
+            width: 50%;
+            padding-right: 2rem;
+            @include atMedium {
+                width: 100%;
+                margin-bottom: 2rem;
+                padding-right: 0;
+            }
+
+            h1 {
+                font-size: $headline;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: $bodyText;
+            }
+        }
+
+        .image-text-image {
+            width: 50%;
+            @include atMedium {
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.project {
+    &__text-block {
+        min-height: 800px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @include atSmallMedium {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @include atSmall {
+            min-height: 400px;
+        }
+
+        .inner {
+            padding-top: 10rem;
+            padding-left: 10rem;
+            @include atSmallMedium {
+                padding: 0;
+            }
+
+            h1 {
+                font-size: $headline;
+            }
+
+            p {
+                font-size: $bodyText;
+            }
+        }
+    }
+}
