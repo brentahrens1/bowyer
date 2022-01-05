@@ -11,7 +11,7 @@ if( have_rows('blocks') ):
             $headingColor = get_sub_field('heading_color'); 
             $bodyTextColor = get_sub_field('body_text_color'); 
             ?>
-            <div class="text-module section">
+            <div class="text-module section" style="background-color: <?php echo $backgroundColor; ?>">
                 <div class="text-module-inner">
                     <?php if ($backgroundImage): ?>
                         <div class="text-module-inner__image">
@@ -55,12 +55,56 @@ if( have_rows('blocks') ):
                     <?php endif; ?>
                 </div>
             </div>
-        <?php elseif( get_row_layout() == 'nav' ): 
-            $file = get_sub_field('text'); ?>
-            <h1><?php echo $file; ?></h1>
-        <?php endif;
-
-    // End loop.
+        <?php elseif( get_row_layout() == 'text_and_cta' ): 
+            $heading = get_sub_field('heading'); 
+            $headingColor = get_sub_field('heading_color'); 
+            $cta = get_sub_field('cta'); 
+            $ctaColor = get_sub_field('cta_color'); 
+            $bodyText = get_sub_field('body_text'); 
+            $bodyTextColor = get_sub_field('body_text_color'); 
+            $backgroundColor = get_sub_field('background_color'); 
+            ?>
+            <div class="text-cta section" style="<?php echo $backgroundColor; ?>">
+                <div class="text-cta-inner">
+                    <div class="text-cta-inner__headline">
+                        <?php if ($heading): ?>
+                            <h1 class="text-cta-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                        <?php endif; ?>
+                    </div>
+                    <div class="text-cta-inner__content">
+                        <?php if ($bodyText): ?>
+                            <p class="text-cta-inner-description" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                        <?php endif; ?>
+                        <?php if ($cta): ?>
+                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <?php elseif (get_row_layout() == 'image_hover_grid'):
+                $blocks = get_sub_field('image_block');
+            ?>  
+            <div class="format-container">
+                <div class="format">
+                    <div class="format-inner">
+                        <?php foreach($blocks as $block): ?>
+                            <div class="format-inner__block" style="background-color: <?php echo $block['background_color']; ?>">
+                                <?php if ($block['header']): ?>
+                                    <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
+                                <?php endif; ?>
+                                <?php if ($block['cta']): ?>
+                                    <p style="color: <?php echo $block['cta_color']; ?>"><?php echo $block['cta'];?></p>
+                                <?php endif; ?>
+                                <?php if ($block['image']): ?>
+                                    <img src="<?php echo $block['image'];?>" />
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+    <?php // End loop.
     endwhile;
 
 // No value.
