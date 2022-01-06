@@ -1,14 +1,14 @@
 .project {
     &__image-text {
         display: flex;
-        padding: 3rem 3rem;
+        padding: 0 $padding-reg;
         @include atMedium {
             flex-direction: column;
         }
 
         .image-text-content {
-            width: 50%;
-            padding-right: 2rem;
+            width: 40%;
+            padding: $padding-medium $padding-reg;
             @include atMedium {
                 width: 100%;
                 margin-bottom: 2rem;
@@ -22,11 +22,13 @@
 
             p {
                 font-size: $bodyText;
+                margin-bottom: 1rem;
             }
         }
 
         .image-text-image {
-            width: 50%;
+            width: 60%;
+            padding: $padding-medium $padding-reg;
             @include atMedium {
                 width: 100%;
             }

@@ -23,6 +23,9 @@
             h1 {
                 font-size: $headline;
                 margin-top: -5.5rem;
+                max-width: 500px;
+                margin-bottom: 1.5rem;
+                padding: 0 $padding-reg;
                 @include atSmallMedium {
                     margin-top: 0;
                 }
@@ -30,6 +33,7 @@
 
             p {
                 font-size: $bodyText;
+                padding: 0 $padding-reg;
             }
         }
     }

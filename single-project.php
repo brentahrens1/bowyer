@@ -30,12 +30,28 @@
                             $backgroundColor = get_sub_field('background_color');
                         ?>
                             <div class="project__image-text" style="background-color: <?php echo $backgroundColor; ?>;">
+                                <?php if ($imageLeft): ?>
+                                    <div class="image-text-image">
+                                        <img src="<?php echo $imageLeft; ?>" alt="" />
+                                    </div>
+                                <?php endif; ?>
                                 <div class="image-text-content">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
                                     <?php echo $bodyText; ?>
                                 </div>
-                                <div class="image-text-image">
-                                    <img src="<?php echo $imageRight; ?>" alt="" />
+                                <?php if ($imageRight): ?>
+                                    <div class="image-text-image">
+                                        <img src="<?php echo $imageRight; ?>" alt="" />
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php elseif(get_row_layout() == 'image_block'):
+                            $image = get_sub_field('image');
+                            $backgroundColor = get_sub_field('background_color');
+                        ?>
+                            <div class="project__image-block" style="background-color: <?php echo $backgroundColor; ?>">
+                                <div class="image-block-content">
+                                    <img src="<?php echo $image; ?>" alt="" />
                                 </div>
                             </div>
                         <?php endif; ?>

@@ -26,6 +26,15 @@ if( have_rows('blocks') ):
                     <?php endif; ?>
                 </div>
             </div>
+        <?php elseif(get_row_layout() == 'image_block'):
+            $image = get_sub_field('image');
+            $backgroundColor = get_sub_field('background_color');
+        ?>
+            <div class="image-block" style="background-color: <?php echo $backgroundColor; ?>">
+                <div class="image-block-content">
+                    <img src="<?php echo $image; ?>" alt="" />
+                </div>
+            </div>
         <?php elseif( get_row_layout() == 'text_and_image' ): 
             $heading = get_sub_field('heading'); 
             $cta = get_sub_field('cta'); 
@@ -42,12 +51,16 @@ if( have_rows('blocks') ):
                         </div>
                     <?php endif; ?>
                     <div class="text-image-inner__content">
-                        <?php if ($heading): ?>
-                            <h1 class="text-image-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                        <?php endif; ?>
-                        <?php if ($cta): ?>
-                            <p class="text-image-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?></p>
-                        <?php endif; ?>
+                        <div class="text-image-inner-container">
+                            <?php if ($heading): ?>
+                                <h1 class="text-image-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                            <?php endif; ?>
+                            <?php if ($cta): ?>
+                                <p class="text-image-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
+                                    <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                </p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                     <?php if ($imageRight): ?>
                         <div class="text-image-inner__right" style="background-image: url(<?php echo $imageRight; ?>);">
@@ -76,7 +89,9 @@ if( have_rows('blocks') ):
                             <p class="text-cta-inner-description" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
                         <?php endif; ?>
                         <?php if ($cta): ?>
-                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?></p>
+                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
+                                <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                            </p>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -93,7 +108,9 @@ if( have_rows('blocks') ):
                                     <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
                                 <?php endif; ?>
                                 <?php if ($block['cta']): ?>
-                                    <p style="color: <?php echo $block['cta_color']; ?>"><?php echo $block['cta'];?></p>
+                                    <p style="color: <?php echo $block['cta_color']; ?>"><?php echo $block['cta'];?>
+                                        <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                    </p>
                                 <?php endif; ?>
                                 <?php if ($block['image']): ?>
                                     <img src="<?php echo $block['image'];?>" />

@@ -12,8 +12,20 @@ html, body {
     overflow: hidden;
 }
 
+body {
+    font-family: proxima-nova, sans-serif;
+}
+
 h1,h2,h3,h4,h5,h6,p {
     margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: proxima-nova, sans-serif;
+}
+
+p,ul,li {
+    font-family: 'georgia';
 }
 
 ul {

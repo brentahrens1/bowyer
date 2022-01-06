@@ -16,15 +16,13 @@
         }
 
         &__content {
-            width: 45%;
+            width: 40%;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            justify-self: center;
-            align-self: center;
-            padding-left: 3rem;
-            padding-right: 3rem;
+            padding: $padding-medium;
             @include atSmallMedium {
                 width: 100%;
                 padding: 3rem;
@@ -35,14 +33,13 @@
             }
     
             .text-image-inner-cta {
-                width: 100%;
                 max-width: 430px;
                 @include cta;
             }
         }
     
         &__right, &__left {
-            width: 55%;
+            width: 60%;
             min-height: 500px;
             overflow: hidden;
             background-position: center;
