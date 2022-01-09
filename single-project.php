@@ -82,6 +82,35 @@
                                     <?php endif; ?>
                                 </div>
                             </div>
+                        <?php elseif(get_row_layout() == 'gallery_grid'):
+                            $image1 = get_sub_field('image_1');
+                            $image2 = get_sub_field('image_2');
+                            $image3 = get_sub_field('image_3');
+                            $image4 = get_sub_field('image_4');
+                            $image5 = get_sub_field('image_5');
+                            $image6 = get_sub_field('image_6');
+                            $backgroundColor = get_sub_field('background_color');
+                        ?>
+                            <div class="project__gallery-grid" style="<?php echo $backgroundColor; ?>">
+                                <div class="gallery-img gallery-img-1">
+                                    <img src="<?php echo $image1 ?>" alt="" />
+                                </div>
+                                <div class="gallery-img gallery-img-2">
+                                    <img src="<?php echo $image2 ?>" alt="" />
+                                </div>
+                                <div class="gallery-img gallery-img-3">
+                                    <img src="<?php echo $image3 ?>" alt="" />
+                                </div>
+                                <div class="gallery-img gallery-img-4">
+                                    <img src="<?php echo $image4 ?>" alt="" />
+                                </div>
+                                <div class="gallery-img gallery-img-5">
+                                    <img src="<?php echo $image5 ?>" alt="" />
+                                </div>
+                                <div class="gallery-img gallery-img-6">
+                                    <img src="<?php echo $image6 ?>" alt="" />
+                                </div>
+                            </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>

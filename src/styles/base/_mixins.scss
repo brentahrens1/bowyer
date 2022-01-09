@@ -43,11 +43,18 @@
     text-align: center;
     cursor: pointer;
     position: relative;
+    transition: all 200ms ease-in-out;
 
     img {
         width: 30px;
         margin-left: 1.3rem;
         margin-top: 5px;
+        transition: all 200ms ease-in-out;
+    }
+
+    &:hover img {
+        margin-left: 1.9rem;
+        transition: all 200ms ease-in-out;
     }
 }
 

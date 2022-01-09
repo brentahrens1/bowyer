@@ -1,0 +1,56 @@
+.project {
+    &__gallery-grid {
+        width: 100%;
+        min-height: 1200px;
+        display: grid;
+        grid-template-areas: 
+            'one one two two two three three'
+            'one one two two two three three'
+            'one one two two two three three'
+            'one one two two two six six'
+            'four four four five five six six'
+            'four four four five five six six'
+            'four four four five five six six';
+        gap: .5rem;
+        padding: $padding-medium;
+
+        @include atSmallMedium {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 1rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-img-1 {
+            grid-area: one;
+        }
+        .gallery-img-2 {
+            grid-area: two;
+        }
+        .gallery-img-3 {
+            grid-area: three;
+        }
+        .gallery-img-4 {
+            grid-area: four;
+        }
+        .gallery-img-5 {
+            grid-area: five;
+        }
+        .gallery-img-6 {
+            grid-area: six;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+}

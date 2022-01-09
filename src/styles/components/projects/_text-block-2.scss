@@ -3,6 +3,9 @@
         width: 100%;
         min-height: 300px;
         padding: $padding-medium;
+        @include atSmall {
+            padding: 1rem;
+        }
 
         .text-block-2-content {
             width: 100%;
@@ -14,6 +17,7 @@
             h1 {
                 @include header;
                 margin-bottom: 1rem;
+                max-width: 600px
             }
 
             p {

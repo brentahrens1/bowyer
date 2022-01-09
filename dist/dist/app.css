@@ -330,11 +330,17 @@ li {
   text-align: center;
   cursor: pointer;
   position: relative;
+  transition: all 200ms ease-in-out;
 }
 .text-image .text-image-inner__content .text-image-inner-cta img {
   width: 30px;
   margin-left: 1.3rem;
   margin-top: 5px;
+  transition: all 200ms ease-in-out;
+}
+.text-image .text-image-inner__content .text-image-inner-cta:hover img {
+  margin-left: 1.9rem;
+  transition: all 200ms ease-in-out;
 }
 @media (max-width: 530px) {
   .text-image .text-image-inner__content {
@@ -446,12 +452,18 @@ li {
   text-align: center;
   cursor: pointer;
   position: relative;
+  transition: all 200ms ease-in-out;
   width: 20rem;
 }
 .text-cta .text-cta-inner__content .text-cta-inner-cta img {
   width: 30px;
   margin-left: 1.3rem;
   margin-top: 5px;
+  transition: all 200ms ease-in-out;
+}
+.text-cta .text-cta-inner__content .text-cta-inner-cta:hover img {
+  margin-left: 1.9rem;
+  transition: all 200ms ease-in-out;
 }
 @media (max-width: 750px) {
   .text-cta .text-cta-inner__content .text-cta-inner-cta {
@@ -521,6 +533,7 @@ li {
   text-align: center;
   cursor: pointer;
   position: relative;
+  transition: all 200ms ease-in-out;
   border: none;
   align-self: flex-start;
 }
@@ -528,6 +541,11 @@ li {
   width: 30px;
   margin-left: 1.3rem;
   margin-top: 5px;
+  transition: all 200ms ease-in-out;
+}
+.format-container .format .format-inner__block p:hover img {
+  margin-left: 1.9rem;
+  transition: all 200ms ease-in-out;
 }
 .format-container .format .format-inner__block p img {
   position: relative;
@@ -683,6 +701,11 @@ li {
   min-height: 300px;
   padding: 4rem;
 }
+@media (max-width: 530px) {
+  .project__text-block-2 {
+    padding: 1rem;
+  }
+}
 .project__text-block-2 .text-block-2-content {
   width: 100%;
   min-height: 300px;
@@ -699,6 +722,7 @@ li {
   letter-spacing: 3px;
   line-height: 60px;
   margin-bottom: 1rem;
+  max-width: 600px;
 }
 @media (max-width: 750px) {
   .project__text-block-2 .text-block-2-content h1 {
@@ -726,6 +750,54 @@ li {
 }
 .project__text-block-2 .text-block-2-content__inner-right {
   align-self: flex-end;
+}
+
+.project__gallery-grid {
+  width: 100%;
+  min-height: 1200px;
+  display: grid;
+  grid-template-areas: "one one two two two three three" "one one two two two three three" "one one two two two three three" "one one two two two six six" "four four four five five six six" "four four four five five six six" "four four four five five six six";
+  gap: 0.5rem;
+  padding: 4rem;
+}
+@media (max-width: 750px) {
+  .project__gallery-grid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1rem;
+  }
+}
+.project__gallery-grid .gallery-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.project__gallery-grid .gallery-img-1 {
+  grid-area: one;
+}
+.project__gallery-grid .gallery-img-2 {
+  grid-area: two;
+}
+.project__gallery-grid .gallery-img-3 {
+  grid-area: three;
+}
+.project__gallery-grid .gallery-img-4 {
+  grid-area: four;
+}
+.project__gallery-grid .gallery-img-5 {
+  grid-area: five;
+}
+.project__gallery-grid .gallery-img-6 {
+  grid-area: six;
+}
+.project__gallery-grid img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
 }
 
 .image-block {
