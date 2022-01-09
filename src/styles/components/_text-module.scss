@@ -16,8 +16,8 @@
             pading-top: 7rem;
         }
         @include atSmall {
-            padding-top: 4rem;
-            min-height: 400px;
+            padding-top: 8rem;
+            min-height: 100%;
         }
 
         h1 {
@@ -27,8 +27,7 @@
         }
     
         p {
-            font-size: $bodyText;
-            margin: 0;
+            @include paragraph;
             transform: translateX(100px);
             max-width: 450px;
             z-index: 1;

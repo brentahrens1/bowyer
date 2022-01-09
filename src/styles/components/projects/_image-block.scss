@@ -8,6 +8,9 @@
             height: 100%;
             object-fit: cover;
             padding: $padding-medium;
+            @include atSmall {
+                padding: 1rem;
+            }
 
             img {
                 width: 100%;

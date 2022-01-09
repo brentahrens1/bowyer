@@ -5,6 +5,9 @@
         @include atMedium {
             flex-direction: column;
         }
+        @include atSmall {
+            padding: 1rem;
+        }
 
         .image-text-content {
             width: 40%;
@@ -13,6 +16,11 @@
                 width: 100%;
                 margin-bottom: 2rem;
                 padding-right: 0;
+            }
+            @include atSmall {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                padding: 1rem;
             }
 
             h1 {
@@ -31,6 +39,9 @@
             padding: $padding-medium $padding-reg;
             @include atMedium {
                 width: 100%;
+            }
+            @include atSmall {
+                padding: 1rem;
             }
 
             img {

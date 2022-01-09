@@ -215,8 +215,8 @@ li {
 }
 @media (max-width: 530px) {
   .text-module .text-module-inner {
-    padding-top: 4rem;
-    min-height: 400px;
+    padding-top: 8rem;
+    min-height: 100%;
   }
 }
 .text-module .text-module-inner h1 {
@@ -245,8 +245,8 @@ li {
   }
 }
 .text-module .text-module-inner p {
-  font-size: 1.2rem;
   margin: 0;
+  font-size: 1.2rem;
   transform: translateX(100px);
   max-width: 450px;
   z-index: 1;
@@ -336,6 +336,11 @@ li {
   margin-left: 1.3rem;
   margin-top: 5px;
 }
+@media (max-width: 530px) {
+  .text-image .text-image-inner__content {
+    min-height: 100%;
+  }
+}
 .text-image .text-image-inner__right, .text-image .text-image-inner__left {
   width: 60%;
   min-height: 500px;
@@ -401,6 +406,11 @@ li {
     margin-bottom: 1rem;
   }
 }
+@media (max-width: 530px) {
+  .text-cta .text-cta-inner__headline {
+    padding: 1rem;
+  }
+}
 @media (max-width: 750px) {
   .text-cta .text-cta-inner__headline {
     width: 100%;
@@ -412,6 +422,11 @@ li {
 .text-cta .text-cta-inner__content {
   width: 45%;
   padding: 3rem;
+}
+@media (max-width: 530px) {
+  .text-cta .text-cta-inner__content {
+    padding: 1rem;
+  }
 }
 .text-cta .text-cta-inner__content .text-cta-inner-description {
   font-size: 1.2rem;
@@ -473,6 +488,12 @@ li {
   min-height: 400px;
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 530px) {
+  .format-container .format .format-inner__block {
+    min-height: 350px;
+    padding: 2rem;
+  }
 }
 .format-container .format .format-inner__block h2 {
   margin: 0;
@@ -549,7 +570,9 @@ li {
 }
 @media (max-width: 530px) {
   .project__text-block {
-    min-height: 400px;
+    min-height: 100%;
+    padding: 2rem;
+    padding-top: 8rem;
   }
 }
 .project__text-block .inner {
@@ -586,6 +609,11 @@ li {
     flex-direction: column;
   }
 }
+@media (max-width: 530px) {
+  .project__image-text {
+    padding: 1rem;
+  }
+}
 .project__image-text .image-text-content {
   width: 40%;
   padding: 4rem 2rem;
@@ -595,6 +623,13 @@ li {
     width: 100%;
     margin-bottom: 2rem;
     padding-right: 0;
+  }
+}
+@media (max-width: 530px) {
+  .project__image-text .image-text-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding: 1rem;
   }
 }
 .project__image-text .image-text-content h1 {
@@ -614,6 +649,11 @@ li {
     width: 100%;
   }
 }
+@media (max-width: 530px) {
+  .project__image-text .image-text-image {
+    padding: 1rem;
+  }
+}
 .project__image-text .image-text-image img {
   width: 100%;
 }
@@ -628,9 +668,64 @@ li {
      object-fit: cover;
   padding: 4rem;
 }
+@media (max-width: 530px) {
+  .project__image-block .image-block-content {
+    padding: 1rem;
+  }
+}
 .project__image-block .image-block-content img {
   width: 100%;
   height: 100%;
+}
+
+.project__text-block-2 {
+  width: 100%;
+  min-height: 300px;
+  padding: 4rem;
+}
+.project__text-block-2 .text-block-2-content {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.project__text-block-2 .text-block-2-content h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 53px;
+  z-index: 1;
+  color: #393E4D;
+  letter-spacing: 3px;
+  line-height: 60px;
+  margin-bottom: 1rem;
+}
+@media (max-width: 750px) {
+  .project__text-block-2 .text-block-2-content h1 {
+    font-size: 2.8rem;
+    line-height: 44px;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 530px) {
+  .project__text-block-2 .text-block-2-content h1 {
+    font-size: 2.2rem;
+    line-height: 44px;
+    margin-bottom: 1rem;
+  }
+}
+.project__text-block-2 .text-block-2-content p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.project__text-block-2 .text-block-2-content__inner-left {
+  align-self: flex-start;
+}
+.project__text-block-2 .text-block-2-content__inner-center {
+  align-self: center;
+}
+.project__text-block-2 .text-block-2-content__inner-right {
+  align-self: flex-end;
 }
 
 .image-block {
@@ -646,4 +741,9 @@ li {
 .image-block .image-block-content img {
   width: 100%;
   height: 100%;
+}
+@media (max-width: 530px) {
+  .image-block .image-block-content {
+    padding: 1rem;
+  }
 }

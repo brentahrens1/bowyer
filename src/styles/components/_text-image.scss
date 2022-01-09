@@ -36,6 +36,10 @@
                 max-width: 430px;
                 @include cta;
             }
+
+            @include atSmall {
+                min-height: 100%;
+            }
         }
     
         &__right, &__left {

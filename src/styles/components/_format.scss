@@ -20,6 +20,10 @@
                 min-height: 400px;
                 position: relative;
                 overflow: hidden;
+                @include atSmall {
+                    min-height: 350px;
+                    padding: 2rem;
+                }
     
                 h2 {
                     @include header-medium;

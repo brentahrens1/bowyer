@@ -54,6 +54,34 @@
                                     <img src="<?php echo $image; ?>" alt="" />
                                 </div>
                             </div>
+                        <?php elseif(get_row_layout() == 'text_block_2'):
+                            $heading = get_sub_field('heading');
+                            $bodyText = get_sub_field('body_text');
+                            $headingColor = get_sub_field('heading_color');
+                            $bodyTextColor = get_sub_field('body_text_color');
+                            $backgroundColor = get_sub_field('background_color');
+                            $textAlignment = get_sub_field('text_alignment');
+                        ?>
+                            <div class="project__text-block-2" style="background-color: <?php echo $backgroundColor; ?>">
+                                <div class="text-block-2-content">
+                                    <?php if ($textAlignment === 'left'): ?>
+                                    <div class="text-block-2-content__inner-left">
+                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    </div>
+                                    <?php elseif ($textAlignment === 'center'): ?>
+                                        <div class="text-block-2-content__inner-center">
+                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    </div>
+                                    <?php elseif ($textAlignment === 'right'): ?>
+                                        <div class="text-block-2-content__inner-right">
+                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
