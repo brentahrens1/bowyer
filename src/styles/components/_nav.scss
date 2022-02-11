@@ -113,7 +113,6 @@
         height: 100vh;
         background-color: #F6F1EC;
         border: .5px solid #393E4D;
-        box-shadow: -6px 10px 25px #393E4D;
         transition: all 400ms ease-in-out;
         z-index: 900;
         @include atSmall {
@@ -133,6 +132,11 @@
                 color: #393E4D;
                 font-size: 2rem;
                 margin-bottom: 1rem;
+
+                a:link, a:visited {
+                    text-decoration: none;
+                    color: #000000;
+                }
             }
         }
     }

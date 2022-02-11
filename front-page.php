@@ -10,9 +10,13 @@ if( have_rows('blocks') ):
             $backgroundColor = get_sub_field('background_color'); 
             $headingColor = get_sub_field('heading_color'); 
             $bodyTextColor = get_sub_field('body_text_color'); 
+            $bt = get_sub_field('bt'); 
+            $br = get_sub_field('br'); 
+            $bb = get_sub_field('bb'); 
+            $bl = get_sub_field('bl'); 
             ?>
-            <div class="text-module section" style="background-color: <?php echo $backgroundColor; ?>">
-                <div class="text-module-inner">
+            <div class="text-module section" style="background-color: <?php echo $backgroundColor;?>;">
+                <div class="text-module-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <?php if ($backgroundImage): ?>
                         <div class="text-module-inner__image">
                             <img class="background-image" src="<?php echo $backgroundImage; ?>" alt="<?php echo $heading; ?>" /> 
@@ -29,9 +33,13 @@ if( have_rows('blocks') ):
         <?php elseif(get_row_layout() == 'image_block'):
             $image = get_sub_field('image');
             $backgroundColor = get_sub_field('background_color');
+            $bt = get_sub_field('bt'); 
+            $br = get_sub_field('br'); 
+            $bb = get_sub_field('bb'); 
+            $bl = get_sub_field('bl');
         ?>
-            <div class="image-block" style="background-color: <?php echo $backgroundColor; ?>">
-                <div class="image-block-content">
+            <div class="image-block" style="background-color: <?php echo $backgroundColor; ?>;">
+                <div class="image-block-content" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <img src="<?php echo $image; ?>" alt="" />
                 </div>
             </div>
@@ -42,10 +50,14 @@ if( have_rows('blocks') ):
             $imageLeft = get_sub_field('image_left'); 
             $headingColor = get_sub_field('heading_color'); 
             $ctaColor = get_sub_field('cta_color'); 
-            $backgroundColor = get_sub_field('background_color');            
+            $backgroundColor = get_sub_field('background_color');  
+            $bt = get_sub_field('bt'); 
+            $br = get_sub_field('br'); 
+            $bb = get_sub_field('bb'); 
+            $bl = get_sub_field('bl');          
             ?>
             <div class="text-image section" style="background-color: <?php echo $backgroundColor ?>">
-                <div class="text-image-inner">
+                <div class="text-image-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <?php if ($imageLeft): ?>
                         <div class="text-image-inner__left" style="background-image: url(<?php echo $imageLeft; ?>);">
                         </div>
@@ -76,9 +88,14 @@ if( have_rows('blocks') ):
             $bodyText = get_sub_field('body_text'); 
             $bodyTextColor = get_sub_field('body_text_color'); 
             $backgroundColor = get_sub_field('background_color'); 
+            $backgroundColorScroll = get_sub_field('background_color_scroll');
+            $bt = get_sub_field('bt'); 
+            $br = get_sub_field('br'); 
+            $bb = get_sub_field('bb'); 
+            $bl = get_sub_field('bl');
             ?>
             <div class="text-cta section" style="<?php echo $backgroundColor; ?>">
-                <div class="text-cta-inner">
+                <div class="text-cta-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <div class="text-cta-inner__headline">
                         <?php if ($heading): ?>
                             <h1 class="text-cta-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
@@ -103,7 +120,7 @@ if( have_rows('blocks') ):
                 <div class="format">
                     <div class="format-inner">
                         <?php foreach($blocks as $block): ?>
-                            <div class="format-inner__block" style="background-color: <?php echo $block['background_color']; ?>">
+                            <div class="format-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
                                 <?php if ($block['heading']): ?>
                                     <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
                                 <?php endif; ?>

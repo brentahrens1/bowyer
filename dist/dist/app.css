@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  font-family: proxima-nova, sans-serif;
+  font-family: "galano-classic";
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: proxima-nova, sans-serif;
+  font-family: "galano-classic";
 }
 
 p, ul, li {
@@ -143,7 +143,6 @@ li {
   height: 100vh;
   background-color: #F6F1EC;
   border: 0.5px solid #393E4D;
-  box-shadow: -6px 10px 25px #393E4D;
   transition: all 400ms ease-in-out;
   z-index: 900;
 }
@@ -164,6 +163,10 @@ li {
   color: #393E4D;
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+.bowyer-nav__overlay ul li a:link, .bowyer-nav__overlay ul li a:visited {
+  text-decoration: none;
+  color: #000000;
 }
 
 @-webkit-keyframes rotateO {
@@ -378,7 +381,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 400px;
+  min-height: 500px;
   transition: all 2s linear;
 }
 @media (max-width: 750px) {
@@ -800,6 +803,67 @@ li {
      object-fit: cover;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
+}
+
+.project {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+}
+.project a:link, .project a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+@media (max-width: 960px) {
+  .project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 750px) {
+  .project {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.project__tease {
+  padding: 1.5rem;
+}
+.project__tease .tease--image {
+  max-width: 100%;
+  overflow: hidden;
+  height: 350px;
+  max-height: 350px;
+}
+@media (max-width: 750px) {
+  .project__tease .tease--image {
+    height: 500px;
+    max-height: 500px;
+  }
+}
+.project__tease .tease--image img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 750px) {
+  .project__tease .tease--image img {
+    height: 500px;
+  }
+}
+.project__tease .tease--content {
+  padding-top: 1rem;
+}
+.project__tease .tease--content h1 {
+  margin-bottom: 1rem;
+}
+@media (max-width: 750px) {
+  .project__tease {
+    border-left: none !important;
+  }
+}
+.project__tease:nth-child(1) {
+  border-left: none !important;
 }
 
 .image-block {

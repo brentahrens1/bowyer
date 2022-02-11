@@ -4,7 +4,7 @@
 
 function scripts() 
 {   
-    wp_register_style('style-font', get_template_directory_uri() . '/font.css', [], 1, 'all');
+    wp_register_style('style-font', get_template_directory_uri() . '/fonts.css', [], 1, 'all');
     wp_enqueue_style('style-font');
     
     wp_register_style('style', get_template_directory_uri() . '/dist/dist/app.css', [], 1, 'all');

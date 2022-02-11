@@ -13,9 +13,13 @@
                             $bodyTextColor = get_sub_field('body_text_color');
                             $backgroundImage = get_sub_field('background_image');
                             $backgroundColor = get_sub_field('background_color');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
                         ?>
                             <div class="project__text-block" style="background-color: <?php echo $backgroundColor; ?>; background-image: url(<?php echo $backgroundImage; ?>);">
-                                <div class="inner">
+                                <div class="inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
                                     <p style="color: <?php echo $bodyText; ?>"><?php echo $bodyText; ?></p>
                                 </div>
@@ -28,8 +32,12 @@
                             $imageRight = get_sub_field('image_right');
                             $imageLeft = get_sub_field('image_left');
                             $backgroundColor = get_sub_field('background_color');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
                         ?>
-                            <div class="project__image-text" style="background-color: <?php echo $backgroundColor; ?>;">
+                            <div class="project__image-text" style="background-color: <?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <?php if ($imageLeft): ?>
                                     <div class="image-text-image">
                                         <img src="<?php echo $imageLeft; ?>" alt="" />
@@ -48,9 +56,13 @@
                         <?php elseif(get_row_layout() == 'image_block'):
                             $image = get_sub_field('image');
                             $backgroundColor = get_sub_field('background_color');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
                         ?>
                             <div class="project__image-block" style="background-color: <?php echo $backgroundColor; ?>">
-                                <div class="image-block-content">
+                                <div class="image-block-content" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                     <img src="<?php echo $image; ?>" alt="" />
                                 </div>
                             </div>
@@ -61,8 +73,12 @@
                             $bodyTextColor = get_sub_field('body_text_color');
                             $backgroundColor = get_sub_field('background_color');
                             $textAlignment = get_sub_field('text_alignment');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
                         ?>
-                            <div class="project__text-block-2" style="background-color: <?php echo $backgroundColor; ?>">
+                            <div class="project__text-block-2" style="background-color: <?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <div class="text-block-2-content">
                                     <?php if ($textAlignment === 'left'): ?>
                                     <div class="text-block-2-content__inner-left">
@@ -90,8 +106,12 @@
                             $image5 = get_sub_field('image_5');
                             $image6 = get_sub_field('image_6');
                             $backgroundColor = get_sub_field('background_color');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
                         ?>
-                            <div class="project__gallery-grid" style="<?php echo $backgroundColor; ?>">
+                            <div class="project__gallery-grid" style="<?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <div class="gallery-img gallery-img-1">
                                     <img src="<?php echo $image1 ?>" alt="" />
                                 </div>

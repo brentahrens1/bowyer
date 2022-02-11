@@ -11,7 +11,7 @@
     </div>
     <div class="bowyer-nav__overlay">
         <ul>
-            <li>Home</li>
+            <li><a href="/project">Projects</a></li>
             <li>Home</li>
             <li>Home</li>
             <li>Home</li>

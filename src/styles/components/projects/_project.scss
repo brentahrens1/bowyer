@@ -3,3 +3,66 @@
 @import './image-block';
 @import './text-block-2';
 @import './gallery-grid';
+
+.project {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+
+    a:link, a:visited {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    @include atMedium {
+        grid-template-columns: repeat(2, 1fr);         
+    }
+
+    @include atSmallMedium {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    &__tease {
+        padding: 1.5rem;
+
+        .tease--image {
+            max-width: 100%;
+            overflow: hidden;
+            height: 350px;
+            max-height: 350px;
+
+            @include atSmallMedium {
+                height: 500px;
+                max-height: 500px;
+            }
+
+            img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+
+                @include atSmallMedium {
+                    height: 500px;
+                }
+            }
+        }
+
+        .tease--content {
+            padding-top: 1rem;
+
+            h1 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @include atSmallMedium {
+            border-left: none !important;
+        }
+
+        &:nth-child(1) {
+            border-left: none !important;
+        }
+    }
+}
