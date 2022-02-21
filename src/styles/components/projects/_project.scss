@@ -5,10 +5,13 @@
 @import './gallery-grid';
 
 .project {
-    margin-top: 8rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto;
+    
+    .project-archive {
+        margin-top: 8rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+    }
 
     a:link, a:visited {
         text-decoration: none;
@@ -42,6 +45,12 @@
                 width: 100%;
                 height: 350px;
                 object-fit: cover;
+                transition: all 200ms ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 200ms ease-in-out;
+                }
 
                 @include atSmallMedium {
                     height: 500px;

@@ -805,7 +805,7 @@ li {
      object-position: 50% 50%;
 }
 
-.project {
+.project .project-archive {
   margin-top: 8rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -845,6 +845,11 @@ li {
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 200ms ease-in-out;
+}
+.project__tease .tease--image img:hover {
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
 }
 @media (max-width: 750px) {
   .project__tease .tease--image img {
@@ -884,4 +889,72 @@ li {
   .image-block .image-block-content {
     padding: 1rem;
   }
+}
+
+.carousel {
+  position: relative;
+}
+.carousel .carousel-right {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+.carousel .carousel-left {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+.carousel .carousel-inner {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.carousel .carousel-inner__block {
+  padding: 1rem;
+  cursor: pointer;
+  width: 33%;
+  min-width: 33%;
+  transition: all 200ms ease-in-out;
+}
+.carousel .carousel-inner__block .carousel-image-container {
+  overflow: hidden;
+  height: 300px;
+  max-height: 300px;
+  width: 100%;
+  position: relative;
+}
+.carousel .carousel-inner__block .carousel-image-container .hovered-image {
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.carousel .carousel-inner__block .carousel-image-container:hover > .hovered-image {
+  opacity: 1;
+  z-index: 2;
+  transition: all 200ms ease-in-out;
+}
+.carousel .carousel-inner__block .carousel-image-container img {
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 200ms ease-in-out;
+}
+.carousel .carousel-inner__block .carousel-content h2 {
+  margin-top: 1rem;
+}
+.footer-nav {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

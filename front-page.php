@@ -137,6 +137,35 @@ if( have_rows('blocks') ):
                     </div>
                 </div>
             </div>
+            <?php elseif (get_row_layout() == 'carousel'):
+                $blocks = get_sub_field('carousel_blocks');
+            ?>  
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <?php foreach($blocks as $block): ?>
+                        <div class="carousel-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
+                            <div class="carousel-image-container">
+                                <?php if ($block['image']): ?>
+                                    <img src="<?php echo $block['image'];?>" />
+                                <?php endif; ?>
+                                <?php if ($block['hovered_image']): ?>
+                                    <img class="hovered-image" src="<?php echo $block['hovered_image'];?>" />
+                                <?php endif; ?>
+                            </div>
+                            <div class="carousel-content">
+                                <?php if ($block['title']): ?>
+                                    <h2 style="color: <?php echo $block['title_color']; ?>"><?php echo $block['title'];?></h2>
+                                <?php endif; ?>
+                                <?php if ($block['description']): ?>
+                                    <p style="color: <?php echo $block['description_color']; ?>"><?php echo $block['description'];?></p>
+                                <?php endif; ?>
+                            </div>                            
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <button class="carousel-right">Right</button>
+                <button class="carousel-left">Left</button>
+            </div>
             <?php endif; ?>
     <?php // End loop.
     endwhile;

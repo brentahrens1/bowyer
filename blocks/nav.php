@@ -12,9 +12,8 @@
     <div class="bowyer-nav__overlay">
         <ul>
             <li><a href="/project">Projects</a></li>
-            <li>Home</li>
-            <li>Home</li>
-            <li>Home</li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </div>
 </nav>

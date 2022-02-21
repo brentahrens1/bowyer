@@ -15,6 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sectionObserver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sectionObserver__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav */ "./src/scripts/nav.js");
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nav__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel */ "./src/scripts/carousel.js");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_carousel__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -36,6 +39,70 @@ burger.addEventListener('click', function () {
   targetNorm.classList.toggle("norm-open");
   overlay.classList.toggle("show");
 });
+
+/***/ }),
+
+/***/ "./src/scripts/carousel.js":
+/*!*********************************!*\
+  !*** ./src/scripts/carousel.js ***!
+  \*********************************/
+/***/ (() => {
+
+var carouselBlock = document.querySelectorAll('.carousel-inner__block');
+var itemArray = Array.from(carouselBlock);
+var btnRight = document.querySelector('.carousel-right');
+var btnLeft = document.querySelector('.carousel-left');
+var count = 0;
+var transformMove = 0;
+
+function moveLeft() {
+  if (window.innerWidth >= 800) {
+    if (count === 1) {
+      itemArray.map(function (s) {
+        return s.style.transform = "translateX(0)";
+      });
+      count = 0;
+    }
+  } else if (window.innerWidth < 800) {
+    if (count !== 0) {
+      transformMove = transformMove - 100;
+      itemArray.map(function (s) {
+        return s.style.transform = "translateX(-".concat(transformMove, "%)");
+      });
+      count--;
+    }
+  }
+}
+
+function moveRight() {
+  if (window.innerWidth >= 800) {
+    count = 1;
+    itemArray.map(function (s) {
+      return s.style.transform = "translateX(-100%)";
+    });
+  } else if (window.innerWidth < 800) {
+    count++;
+
+    if (count >= 3) {
+      count = 3;
+    }
+
+    transformMove = transformMove + 100;
+
+    if (transformMove >= 300) {
+      transformMove = 300;
+    }
+
+    if (count > 0 && count <= 3) {
+      itemArray.map(function (s) {
+        return s.style.transform = "translateX(-".concat(transformMove, "%)");
+      });
+    }
+  }
+}
+
+btnRight.addEventListener('click', moveRight);
+btnLeft.addEventListener('click', moveLeft);
 
 /***/ }),
 
