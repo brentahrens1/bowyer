@@ -12,6 +12,12 @@
         .image-text-content {
             width: 40%;
             padding: $padding-medium $padding-reg;
+
+            .project-cta {
+                @include cta;
+                margin-top: 2rem;
+            }
+
             @include atMedium {
                 width: 100%;
                 margin-bottom: 2rem;

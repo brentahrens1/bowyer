@@ -36,6 +36,7 @@
                             $br = get_sub_field('br'); 
                             $bb = get_sub_field('bb'); 
                             $bl = get_sub_field('bl');
+                            $cta = get_sub_field('cta');
                         ?>
                             <div class="project__image-text" style="background-color: <?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <?php if ($imageLeft): ?>
@@ -46,6 +47,11 @@
                                 <div class="image-text-content">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
                                     <?php echo $bodyText; ?>
+                                    <?php if ($cta): ?>
+                                        <p class="project-cta" style="color: <?php echo $headingColor; ?>"><?php echo $cta;?>
+                                            <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                        </p>
+                                    <?php endif; ?>
                                 </div>
                                 <?php if ($imageRight): ?>
                                     <div class="image-text-image">
@@ -183,6 +189,12 @@
                                     <?php endforeach; ?>
                                 </div>
                             </div>
+                        </div>
+                        <?php elseif (get_row_layout() == 'full_bleed_image'):
+                            $fullImage = get_sub_field('full_image');
+                        ?>  
+                        <div class="full-bleed-image">
+                            <img src="<?php echo $fullImage; ?>" alt="" />
                         </div>
                         <?php endif; ?>
                     <?php endwhile; ?>

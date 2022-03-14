@@ -166,6 +166,12 @@ if( have_rows('blocks') ):
                 <button class="carousel-right">Right</button>
                 <button class="carousel-left">Left</button>
             </div>
+            <?php elseif (get_row_layout() == 'full_bleed_image'):
+                $fullImage = get_sub_field('full_image');
+            ?>  
+                <div class="full-bleed-image">
+                    <img src="<?php echo $fullImage; ?>" alt="" />
+                </div>
             <?php endif; ?>
     <?php // End loop.
     endwhile;
