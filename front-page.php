@@ -169,7 +169,7 @@ if( have_rows('blocks') ):
             <?php elseif (get_row_layout() == 'full_bleed_image'):
                 $fullImage = get_sub_field('full_image');
             ?>  
-                <div class="full-bleed-image">
+                <div class="full-bleed-image" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <img src="<?php echo $fullImage; ?>" alt="" />
                 </div>
             <?php endif; ?>

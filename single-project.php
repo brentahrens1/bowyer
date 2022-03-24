@@ -21,7 +21,7 @@
                             <div class="project__text-block" style="background-color: <?php echo $backgroundColor; ?>; background-image: url(<?php echo $backgroundImage; ?>);">
                                 <div class="inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                                    <p style="color: <?php echo $bodyText; ?>"><?php echo $bodyText; ?></p>
+                                    <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
                                 </div>
                             </div>
                         <?php elseif(get_row_layout() == 'image_and_text_block'):
