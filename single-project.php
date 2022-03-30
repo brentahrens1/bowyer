@@ -196,6 +196,39 @@
                         <div class="full-bleed-image">
                             <img src="<?php echo $fullImage; ?>" alt="" />
                         </div>
+                        <?php elseif( get_row_layout() == 'text_and_cta' ): 
+                            $heading = get_sub_field('heading'); 
+                            $headingColor = get_sub_field('heading_color'); 
+                            $cta = get_sub_field('cta'); 
+                            $ctaColor = get_sub_field('cta_color'); 
+                            $bodyText = get_sub_field('body_text'); 
+                            $bodyTextColor = get_sub_field('body_text_color'); 
+                            $backgroundColor = get_sub_field('background_color'); 
+                            $backgroundColorScroll = get_sub_field('background_color_scroll');
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl');
+                            ?>
+                            <div class="text-cta section" style="<?php echo $backgroundColor; ?>">
+                                <div class="text-cta-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
+                                    <div class="text-cta-inner__headline">
+                                        <?php if ($heading): ?>
+                                            <h1 class="text-cta-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="text-cta-inner__content">
+                                        <?php if ($bodyText): ?>
+                                            <p class="text-cta-inner-description" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                        <?php endif; ?>
+                                        <?php if ($cta): ?>
+                                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
+                                                <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                            </p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
