@@ -1,14 +1,13 @@
 .footer-nav {
     min-height: 400px;
     position: relative;
-    background-color: #F6EA92;
     padding: 5rem;
     display: flex;
     align-items: center;
     @include atSmallMedium {
         flex-direction: column;
         padding: 2rem;
-        min-height: 500px;
+        min-height: 100%;
     }
 
     &__content {
@@ -21,10 +20,21 @@
         }
 
         .footer--arrow {
-            
+            width: 5rem;
+            z-index: 2;
+
+            @include atSmallMedium {
+                margin-left: 15px;
+            }
+
+            img {
+                width: 100%;
+            }
         }
         .footer--links {
-
+            p {
+                margin-bottom: 10px;
+            }
         }
         
         .footer--stamp {
@@ -37,13 +47,10 @@
         top: 0;
         right: 0;
         bottom: 0;
-        width: 75%;
+        left: 0;
+        width: 100%;
         height: 100%;
         object-fit: cover;
-        @include atSmallMedium {
-            top: initial;
-            width: 100%;
-            height: 50%
-        }
+        z-index: -1;
     }
 }

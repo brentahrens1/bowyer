@@ -172,6 +172,12 @@ if( have_rows('blocks') ):
                 <div class="full-bleed-image" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                     <img src="<?php echo $fullImage; ?>" alt="" />
                 </div>
+            <?php elseif (get_row_layout() == 'contact_form'):
+                $contact = get_sub_field('contact');
+            ?>  
+                <div class="contact-form">
+                    <?php echo $contact; ?>
+                </div>
             <?php endif; ?>
     <?php // End loop.
     endwhile;

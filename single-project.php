@@ -229,6 +229,12 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php elseif (get_row_layout() == 'contact_form'):
+                            $contact = get_sub_field('contact');
+                        ?>  
+                            <div class="contact-form">
+                                <?php echo $contact; ?>
+                            </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
