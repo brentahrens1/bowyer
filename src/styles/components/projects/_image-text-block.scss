@@ -11,7 +11,7 @@
 
         .image-text-content {
             width: 40%;
-            padding: $padding-medium $padding-reg;
+            padding: $padding-medium 5rem;
 
             .project-cta {
                 @include cta;

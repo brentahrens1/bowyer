@@ -35,7 +35,7 @@
 
 // CTA
 @mixin cta {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #000;
@@ -61,7 +61,7 @@
 @mixin header {
     margin: 0;
     font-size: $headline;
-    line-height: 53px;
+    line-height: 37px;
     z-index: 1;
     color: #393E4D;
     letter-spacing: 3px;

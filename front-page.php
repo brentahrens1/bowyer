@@ -46,6 +46,7 @@ if( have_rows('blocks') ):
         <?php elseif( get_row_layout() == 'text_and_image' ): 
             $heading = get_sub_field('heading'); 
             $cta = get_sub_field('cta'); 
+            $ctaLink = get_sub_field('cta_link'); 
             $imageRight = get_sub_field('image_right'); 
             $imageLeft = get_sub_field('image_left'); 
             $headingColor = get_sub_field('heading_color'); 
@@ -68,9 +69,11 @@ if( have_rows('blocks') ):
                                 <h1 class="text-image-inner-headline" style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
                             <?php endif; ?>
                             <?php if ($cta): ?>
-                                <p class="text-image-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
-                                    <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                                </p>
+                                <a href="<?php echo $ctaLink ?>">
+                                    <p class="text-image-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
+                                        <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                    </p>
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -82,9 +85,7 @@ if( have_rows('blocks') ):
             </div>
         <?php elseif( get_row_layout() == 'text_and_cta' ): 
             $heading = get_sub_field('heading'); 
-            $headingColor = get_sub_field('heading_color'); 
-            $cta = get_sub_field('cta'); 
-            $ctaColor = get_sub_field('cta_color'); 
+            $headingColor = get_sub_field('heading_color');
             $bodyText = get_sub_field('body_text'); 
             $bodyTextColor = get_sub_field('body_text_color'); 
             $backgroundColor = get_sub_field('background_color'); 
@@ -106,9 +107,11 @@ if( have_rows('blocks') ):
                             <p class="text-cta-inner-description" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
                         <?php endif; ?>
                         <?php if ($cta): ?>
-                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
-                                <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                            </p>
+                            <a href="<?php echo $ctaLink ?>">
+                                <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
+                                    <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                </p>
+                            </a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -120,19 +123,16 @@ if( have_rows('blocks') ):
                 <div class="format">
                     <div class="format-inner">
                         <?php foreach($blocks as $block): ?>
-                            <div class="format-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
-                                <?php if ($block['heading']): ?>
-                                    <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
-                                <?php endif; ?>
-                                <?php if ($block['cta']): ?>
-                                    <p style="color: <?php echo $block['cta_color']; ?>"><?php echo $block['cta'];?>
-                                        <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                                    </p>
-                                <?php endif; ?>
-                                <?php if ($block['image']): ?>
-                                    <img src="<?php echo $block['image'];?>" />
-                                <?php endif; ?>
-                            </div>
+                            <a href="<?php echo $block['cta_link'] ?>">
+                                <div class="format-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
+                                    <?php if ($block['heading']): ?>
+                                        <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
+                                    <?php endif; ?>
+                                    <?php if ($block['image']): ?>
+                                        <img src="<?php echo $block['image'];?>" />
+                                    <?php endif; ?>
+                                </div>
+                            </a>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -143,28 +143,30 @@ if( have_rows('blocks') ):
             <div class="carousel">
                 <div class="carousel-inner">
                     <?php foreach($blocks as $block): ?>
-                        <div class="carousel-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
-                            <div class="carousel-image-container">
-                                <?php if ($block['image']): ?>
-                                    <img src="<?php echo $block['image'];?>" />
-                                <?php endif; ?>
-                                <?php if ($block['hovered_image']): ?>
-                                    <img class="hovered-image" src="<?php echo $block['hovered_image'];?>" />
-                                <?php endif; ?>
+                        <a class="carousel-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;" href="<?php echo $block['cta_link'] ?>">
+                            <div>
+                                <div class="carousel-image-container">
+                                    <?php if ($block['image']): ?>
+                                        <img src="<?php echo $block['image'];?>" />
+                                    <?php endif; ?>
+                                    <?php if ($block['hovered_image']): ?>
+                                        <img class="hovered-image" src="<?php echo $block['hovered_image'];?>" />
+                                    <?php endif; ?>
+                                </div>
+                                <div class="carousel-content">
+                                    <?php if ($block['title']): ?>
+                                        <h2 style="color: <?php echo $block['title_color']; ?>"><?php echo $block['title'];?></h2>
+                                    <?php endif; ?>
+                                    <?php if ($block['description']): ?>
+                                        <p style="color: <?php echo $block['description_color']; ?>"><?php echo $block['description'];?></p>
+                                    <?php endif; ?>
+                                </div>                            
                             </div>
-                            <div class="carousel-content">
-                                <?php if ($block['title']): ?>
-                                    <h2 style="color: <?php echo $block['title_color']; ?>"><?php echo $block['title'];?></h2>
-                                <?php endif; ?>
-                                <?php if ($block['description']): ?>
-                                    <p style="color: <?php echo $block['description_color']; ?>"><?php echo $block['description'];?></p>
-                                <?php endif; ?>
-                            </div>                            
-                        </div>
+                        </a>
                     <?php endforeach; ?>
                 </div>
-                <button class="carousel-right">Right</button>
-                <button class="carousel-left">Left</button>
+                <img class="carousel-right" src="<?php echo get_theme_file_uri('/images/arrow.png'); ?>" />
+                <img class="carousel-left" src="<?php echo get_theme_file_uri('/images/arrow.png'); ?>" />
             </div>
             <?php elseif (get_row_layout() == 'full_bleed_image'):
                 $fullImage = get_sub_field('full_image');

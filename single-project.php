@@ -18,8 +18,8 @@
                             $bb = get_sub_field('bb'); 
                             $bl = get_sub_field('bl');
                         ?>
-                            <div class="project__text-block" style="background-color: <?php echo $backgroundColor; ?>; background-image: url(<?php echo $backgroundImage; ?>);">
-                                <div class="inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
+                            <div class="project__text-block" style="background-color: <?php echo $backgroundColor; ?>; background-image: url(<?php echo $backgroundImage; ?>); border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
+                                <div class="inner">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
                                     <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
                                 </div>
@@ -37,6 +37,7 @@
                             $bb = get_sub_field('bb'); 
                             $bl = get_sub_field('bl');
                             $cta = get_sub_field('cta');
+                            $ctaLink = get_sub_field('cta_link');
                         ?>
                             <div class="project__image-text" style="background-color: <?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <?php if ($imageLeft): ?>
@@ -46,11 +47,13 @@
                                 <?php endif; ?>
                                 <div class="image-text-content">
                                     <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                                    <?php echo $bodyText; ?>
+                                    <div style="<?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></div>
                                     <?php if ($cta): ?>
-                                        <p class="project-cta" style="color: <?php echo $headingColor; ?>"><?php echo $cta;?>
-                                            <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                                        </p>
+                                        <a href="<?php echo $ctaLink; ?>">
+                                            <p class="project-cta"><?php echo $cta;?>
+                                                <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                            </p>
+                                        </a>
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($imageRight): ?>
@@ -163,8 +166,8 @@
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            <button class="carousel-right">Right</button>
-                            <button class="carousel-left">Left</button>
+                            <img class="carousel-right" src="<?php echo get_theme_file_uri('/images/arrow.png'); ?>" />
+                            <img class="carousel-left" src="<?php echo get_theme_file_uri('/images/arrow.png'); ?>" />
                         </div>
                         <?php elseif (get_row_layout() == 'image_hover_grid'):
                             $blocks = get_sub_field('image_block');
@@ -173,19 +176,14 @@
                             <div class="format">
                                 <div class="format-inner">
                                     <?php foreach($blocks as $block): ?>
-                                        <div class="format-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
+                                        <a href="<?php echo $block['cta_link'] ?>" class="format-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
                                             <?php if ($block['heading']): ?>
                                                 <h2 style="color: <?php echo $block['heading_color']; ?>"><?php echo $block['heading'];?></h2>
-                                            <?php endif; ?>
-                                            <?php if ($block['cta']): ?>
-                                                <p style="color: <?php echo $block['cta_color']; ?>"><?php echo $block['cta'];?>
-                                                    <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                                                </p>
                                             <?php endif; ?>
                                             <?php if ($block['image']): ?>
                                                 <img src="<?php echo $block['image'];?>" />
                                             <?php endif; ?>
-                                        </div>
+                                        </a>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -200,12 +198,11 @@
                             $heading = get_sub_field('heading'); 
                             $headingColor = get_sub_field('heading_color'); 
                             $cta = get_sub_field('cta'); 
-                            $ctaColor = get_sub_field('cta_color'); 
+                            $ctaLink = get_sub_field('cta_link'); 
                             $bodyText = get_sub_field('body_text'); 
                             $bodyTextColor = get_sub_field('body_text_color'); 
                             $backgroundColor = get_sub_field('background_color'); 
-                            $backgroundColorScroll = get_sub_field('background_color_scroll');
-                            $bt = get_sub_field('bt'); 
+                            $bt = get_sub_field('bt');
                             $br = get_sub_field('br'); 
                             $bb = get_sub_field('bb'); 
                             $bl = get_sub_field('bl');
@@ -222,9 +219,11 @@
                                             <p class="text-cta-inner-description" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
                                         <?php endif; ?>
                                         <?php if ($cta): ?>
-                                            <p class="text-cta-inner-cta" style="color: <?php echo $ctaColor; ?>"><?php echo $cta; ?>
-                                                <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
-                                            </p>
+                                            <a href="<?php echo $ctaLink ?>">
+                                                <p class="text-cta-inner-cta"><?php echo $cta; ?>
+                                                    <span><img src="<?php echo get_theme_file_uri('/images/right-arrow.png'); ?>" alt="" /></span>
+                                                </p>
+                                            </a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
