@@ -231,7 +231,6 @@ a:link, a:visited {
   z-index: 1;
   color: #393E4D;
   letter-spacing: 3px;
-  line-height: 60px;
   margin-bottom: 2rem;
   max-width: 800px;
 }
@@ -308,7 +307,6 @@ a:link, a:visited {
   z-index: 1;
   color: #393E4D;
   letter-spacing: 3px;
-  line-height: 60px;
   margin-bottom: 2.5rem;
 }
 @media (max-width: 750px) {
@@ -401,7 +399,6 @@ a:link, a:visited {
   z-index: 1;
   color: #393E4D;
   letter-spacing: 3px;
-  line-height: 60px;
 }
 @media (max-width: 750px) {
   .text-cta .text-cta-inner__headline h1 {
@@ -749,7 +746,6 @@ a:link, a:visited {
   z-index: 1;
   color: #393E4D;
   letter-spacing: 3px;
-  line-height: 60px;
   margin-bottom: 1rem;
   max-width: 600px;
 }
@@ -932,7 +928,7 @@ a:link, a:visited {
   z-index: 10;
   cursor: pointer;
   width: 6rem;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 0.5rem;
 }
 .carousel .carousel-right img {
@@ -946,7 +942,7 @@ a:link, a:visited {
   z-index: 10;
   cursor: pointer;
   width: 6rem;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 0.5rem;
 }
 .carousel .carousel-left img {
@@ -1031,6 +1027,11 @@ a:link, a:visited {
   padding: 4rem;
   padding-bottom: 2rem;
   background-color: #FFFFFF;
+}
+@media (max-width: 530px) {
+  .contact-form {
+    padding: 2rem;
+  }
 }
 .contact-form p, .contact-form h1 {
   margin-bottom: 1.2rem;

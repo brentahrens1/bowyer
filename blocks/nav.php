@@ -10,10 +10,10 @@
         <img class="target-clicked" src="<?php echo get_theme_file_uri('/images/target-click.png'); ?>" />
     </div>
     <div class="bowyer-nav__overlay">
-        <ul>
-            <li><a href="/project">Projects</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
+        <?php 
+            wp_nav_menu(array(
+                'theme_location' => 'headerMenuLocation'
+            ));
+        ?>
     </div>
 </nav>

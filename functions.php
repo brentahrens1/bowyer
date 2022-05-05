@@ -35,3 +35,9 @@ function project_post_types() {
 }
 
 add_action('init', 'project_post_types');
+
+function bowyer_features() {
+    register_nav_menu('headerMenuLocation', 'Header Menu Location');
+}
+
+add_action('after_setup_theme', 'bowyer_features');

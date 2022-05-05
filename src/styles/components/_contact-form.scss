@@ -7,6 +7,10 @@
     padding-bottom: 2rem;
     background-color: #FFFFFF;
 
+    @include atSmall {
+        padding: 2rem;
+    }
+
     p, h1 {
         margin-bottom: 1.2rem;
         color: #393E4D;

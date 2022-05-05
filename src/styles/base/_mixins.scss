@@ -65,7 +65,6 @@
     z-index: 1;
     color: #393E4D;
     letter-spacing: 3px;
-    line-height: 60px;
     @include atSmallMedium {
         font-size: $headlineTablet;
         line-height: 44px;
