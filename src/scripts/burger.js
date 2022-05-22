@@ -8,3 +8,11 @@ burger.addEventListener('click', function() {
     targetNorm.classList.toggle("norm-open")
     overlay.classList.toggle("show")
 })
+
+const handleClickOutside = (event) => {
+    if (!overlay.contains(event.target)) {
+        overlay.classList.remove("show")
+    }
+}
+document.addEventListener("mousedown", handleClickOutside)
+

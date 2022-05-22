@@ -40,6 +40,14 @@ burger.addEventListener('click', function () {
   overlay.classList.toggle("show");
 });
 
+var handleClickOutside = function handleClickOutside(event) {
+  if (!overlay.contains(event.target)) {
+    overlay.classList.remove("show");
+  }
+};
+
+document.addEventListener("mousedown", handleClickOutside);
+
 /***/ }),
 
 /***/ "./src/scripts/carousel.js":

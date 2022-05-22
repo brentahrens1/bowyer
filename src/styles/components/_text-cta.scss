@@ -1,11 +1,6 @@
 .text-cta {
     width: 100%;
 
-    &.scroll-into-view {
-        background-color: #F6F1EC !important;
-        transition: all 2s linear;
-    }
-
     .text-cta-inner {
         margin: 0 auto;
         display: flex;

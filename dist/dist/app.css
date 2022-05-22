@@ -37,6 +37,10 @@ a:link, a:visited {
   text-decoration: none;
 }
 
+p {
+  line-height: 27px;
+}
+
 .bowyer-nav {
   display: flex;
   flex-direction: row;
@@ -227,10 +231,8 @@ a:link, a:visited {
 .text-module .text-module-inner h1 {
   margin: 0;
   font-size: 2.5rem;
-  line-height: 37px;
+  line-height: 50px;
   z-index: 1;
-  color: #393E4D;
-  letter-spacing: 3px;
   margin-bottom: 2rem;
   max-width: 800px;
 }
@@ -303,10 +305,8 @@ a:link, a:visited {
 .text-image .text-image-inner__content .text-image-inner-headline {
   margin: 0;
   font-size: 2.5rem;
-  line-height: 37px;
+  line-height: 50px;
   z-index: 1;
-  color: #393E4D;
-  letter-spacing: 3px;
   margin-bottom: 2.5rem;
 }
 @media (max-width: 750px) {
@@ -370,10 +370,6 @@ a:link, a:visited {
 .text-cta {
   width: 100%;
 }
-.text-cta.scroll-into-view {
-  background-color: #F6F1EC !important;
-  transition: all 2s linear;
-}
 .text-cta .text-cta-inner {
   margin: 0 auto;
   display: flex;
@@ -395,10 +391,8 @@ a:link, a:visited {
 .text-cta .text-cta-inner__headline h1 {
   margin: 0;
   font-size: 2.5rem;
-  line-height: 37px;
+  line-height: 50px;
   z-index: 1;
-  color: #393E4D;
-  letter-spacing: 3px;
 }
 @media (max-width: 750px) {
   .text-cta .text-cta-inner__headline h1 {
@@ -502,6 +496,7 @@ a:link, a:visited {
   min-height: 400px;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 @media (max-width: 530px) {
   .format-container .format .format-inner__block {
@@ -609,6 +604,24 @@ a:link, a:visited {
   max-width: 500px;
   margin-bottom: 1.5rem;
   padding: 0 2rem;
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 50px;
+  z-index: 1;
+}
+@media (max-width: 750px) {
+  .project__text-block .inner h1 {
+    font-size: 2.8rem;
+    line-height: 44px;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 530px) {
+  .project__text-block .inner h1 {
+    font-size: 2.2rem;
+    line-height: 44px;
+    margin-bottom: 1rem;
+  }
 }
 @media (max-width: 750px) {
   .project__text-block .inner h1 {
@@ -637,6 +650,10 @@ a:link, a:visited {
 .project__image-text .image-text-content {
   width: 40%;
   padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .project__image-text .image-text-content .project-cta {
   display: inline-flex;
@@ -659,6 +676,26 @@ a:link, a:visited {
 .project__image-text .image-text-content .project-cta:hover img {
   margin-left: 1.9rem;
   transition: all 200ms ease-in-out;
+}
+.project__image-text .image-text-content h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 50px;
+  z-index: 1;
+}
+@media (max-width: 750px) {
+  .project__image-text .image-text-content h1 {
+    font-size: 2.8rem;
+    line-height: 44px;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 530px) {
+  .project__image-text .image-text-content h1 {
+    font-size: 2.2rem;
+    line-height: 44px;
+    margin-bottom: 1rem;
+  }
 }
 @media (max-width: 960px) {
   .project__image-text .image-text-content {
@@ -742,10 +779,8 @@ a:link, a:visited {
 .project__text-block-2 .text-block-2-content h1 {
   margin: 0;
   font-size: 2.5rem;
-  line-height: 37px;
+  line-height: 50px;
   z-index: 1;
-  color: #393E4D;
-  letter-spacing: 3px;
   margin-bottom: 1rem;
   max-width: 600px;
 }
@@ -1058,6 +1093,9 @@ a:link, a:visited {
     padding: 2rem;
     min-height: 100%;
   }
+}
+.footer-nav a:link, .footer-nav a:visited {
+  color: #000000;
 }
 .footer-nav__content {
   display: flex;

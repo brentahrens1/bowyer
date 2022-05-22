@@ -76,10 +76,8 @@
                                 </div>
                             </div>
                         <?php elseif(get_row_layout() == 'text_block_2'):
-                            $heading = get_sub_field('heading');
-                            $bodyText = get_sub_field('body_text');
-                            $headingColor = get_sub_field('heading_color');
-                            $bodyTextColor = get_sub_field('body_text_color');
+                            $content = get_sub_field('content');
+                            $textColor = get_sub_field('text_color');
                             $backgroundColor = get_sub_field('background_color');
                             $textAlignment = get_sub_field('text_alignment');
                             $bt = get_sub_field('bt'); 
@@ -90,19 +88,16 @@
                             <div class="project__text-block-2" style="background-color: <?php echo $backgroundColor; ?>; border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                 <div class="text-block-2-content">
                                     <?php if ($textAlignment === 'left'): ?>
-                                    <div class="text-block-2-content__inner-left">
-                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    <div class="text-block-2-content__inner-left" style="color: <?php echo $textColor; ?>">
+                                        <?php echo $content; ?>
                                     </div>
                                     <?php elseif ($textAlignment === 'center'): ?>
-                                        <div class="text-block-2-content__inner-center">
-                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    <div class="text-block-2-content__inner-center" style="color: <?php echo $textColor; ?>">
+                                        <?php echo $content; ?>
                                     </div>
                                     <?php elseif ($textAlignment === 'right'): ?>
-                                        <div class="text-block-2-content__inner-right">
-                                        <h1 style="color: <?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
-                                        <p style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    <div class="text-block-2-content__inner-right" style="color: <?php echo $textColor; ?>">
+                                        <?php echo $content; ?>
                                     </div>
                                     <?php endif; ?>
                                 </div>
@@ -146,7 +141,7 @@
                         <div class="carousel">
                             <div class="carousel-inner">
                                 <?php foreach($blocks as $block): ?>
-                                    <div class="carousel-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
+                                    <a href="<?php echo $block['link']; ?>" target="_blank" class="carousel-inner__block" style="background-color: <?php echo $block['background_color'];?>; border-top: <?php echo $block['bt'];?>; border-right: <?php echo $block['br'];?>; border-bottom: <?php echo $block['bb'];?>; border-left: <?php echo $block['bl'];?>;">
                                         <div class="carousel-image-container">
                                             <?php if ($block['image']): ?>
                                                 <img src="<?php echo $block['image'];?>" />
@@ -163,7 +158,7 @@
                                                 <p style="color: <?php echo $block['description_color']; ?>"><?php echo $block['description'];?></p>
                                             <?php endif; ?>
                                         </div>                            
-                                    </div>
+                                    </a>
                                 <?php endforeach; ?>
                             </div>
                             <img class="carousel-right" src="<?php echo get_theme_file_uri('/images/arrow.png'); ?>" />
@@ -194,6 +189,33 @@
                         <div class="full-bleed-image">
                             <img src="<?php echo $fullImage; ?>" alt="" />
                         </div>
+                        <?php elseif( get_row_layout() == 'text_home_module' ):
+                            $heading = get_sub_field('heading'); 
+                            $bodyText = get_sub_field('body_text'); 
+                            $backgroundImage = get_sub_field('background_image'); 
+                            $backgroundColor = get_sub_field('background_color'); 
+                            $headlineColor = get_sub_field('heading_color'); 
+                            $bodyTextColor = get_sub_field('body_text_color'); 
+                            $bt = get_sub_field('bt'); 
+                            $br = get_sub_field('br'); 
+                            $bb = get_sub_field('bb'); 
+                            $bl = get_sub_field('bl'); 
+                            ?>
+                            <div class="text-module section" style="background-color: <?php echo $backgroundColor;?>;">
+                                <div class="text-module-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
+                                    <?php if ($backgroundImage): ?>
+                                        <div class="text-module-inner__image">
+                                            <img class="background-image" src="<?php echo $backgroundImage; ?>" alt="<?php echo $heading; ?>" /> 
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($heading): ?>
+                                        <h1 class="text-module-inner__headline" style="color: <?php echo $headlineColor; ?>"><?php echo $heading; ?></h1>
+                                    <?php endif; ?>
+                                    <?php if ($bodyText): ?>
+                                        <p class="text-module-inner__body-text" style="color: <?php echo $bodyTextColor; ?>"><?php echo $bodyText; ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         <?php elseif( get_row_layout() == 'text_and_cta' ): 
                             $heading = get_sub_field('heading'); 
                             $headingColor = get_sub_field('heading_color'); 
@@ -207,7 +229,7 @@
                             $bb = get_sub_field('bb'); 
                             $bl = get_sub_field('bl');
                             ?>
-                            <div class="text-cta section" style="<?php echo $backgroundColor; ?>">
+                            <div class="text-cta section" style="background-color: <?php echo $backgroundColor; ?>;">
                                 <div class="text-cta-inner" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                                     <div class="text-cta-inner__headline">
                                         <?php if ($heading): ?>

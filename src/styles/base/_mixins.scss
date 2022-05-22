@@ -61,10 +61,8 @@
 @mixin header {
     margin: 0;
     font-size: $headline;
-    line-height: 37px;
+    line-height: 50px;
     z-index: 1;
-    color: #393E4D;
-    letter-spacing: 3px;
     @include atSmallMedium {
         font-size: $headlineTablet;
         line-height: 44px;

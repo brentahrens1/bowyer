@@ -28,6 +28,8 @@
                 max-width: 500px;
                 margin-bottom: 1.5rem;
                 padding: 0 $padding-reg;
+                @include header;
+                
                 @include atSmallMedium {
                     margin-top: 0;
                 }

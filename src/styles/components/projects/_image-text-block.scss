@@ -12,10 +12,18 @@
         .image-text-content {
             width: 40%;
             padding: $padding-medium 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
             .project-cta {
                 @include cta;
                 margin-top: 2rem;
+            }
+
+            h1 {
+                @include header;
             }
 
             @include atMedium {
