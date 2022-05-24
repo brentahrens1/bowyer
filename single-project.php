@@ -185,8 +185,12 @@
                         </div>
                         <?php elseif (get_row_layout() == 'full_bleed_image'):
                             $fullImage = get_sub_field('full_image');
+                            $bt = get_sub_field('bt');
+                            $br = get_sub_field('br');
+                            $bb = get_sub_field('bb');
+                            $bl = get_sub_field('bl');
                         ?>  
-                        <div class="full-bleed-image">
+                        <div class="full-bleed-image" style="border-top: <?php echo $bt;?>; border-right: <?php echo $br;?>; border-bottom: <?php echo $bb;?>; border-left: <?php echo $bl;?>;">
                             <img src="<?php echo $fullImage; ?>" alt="" />
                         </div>
                         <?php elseif( get_row_layout() == 'text_home_module' ):
