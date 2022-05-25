@@ -1034,6 +1034,7 @@ p {
 .full-bleed-image {
   width: 100%;
   max-height: 800px;
+  overflow: hidden;
 }
 @media (max-width: 750px) {
   .full-bleed-image {
