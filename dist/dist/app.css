@@ -927,6 +927,7 @@ p {
 }
 .project .full-bleed-image {
   width: 100%;
+  overflow: hidden;
 }
 .project .full-bleed-image img {
   width: 100%;
